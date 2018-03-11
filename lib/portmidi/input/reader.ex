@@ -35,6 +35,7 @@ defmodule PortMidi.Input.Reader do
 
   defp loop(server, stream) do
     if do_poll(stream) == :read, do: read_and_send(server,stream)
+    Process.sleep(10)
     loop(server, stream)
   end
 
